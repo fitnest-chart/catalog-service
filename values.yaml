@@ -11,7 +11,11 @@ service:
 istio:
   enabled: true
   host: "catalog-service"
-env: {}
+env:
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgresql-catalog:5432/fitnest_catalog"
+  SPRING_DATASOURCE_USERNAME: "fitnest_catalog"
+  SPRING_DATASOURCE_PASSWORD: "catalog_password_123"
+  SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
 resources:
   requests:
     cpu: 100m
